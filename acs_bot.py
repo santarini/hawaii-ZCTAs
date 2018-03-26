@@ -9,6 +9,8 @@ driver = webdriver.Chrome(r"C:\Users\CommandCenter\AppData\Local\Programs\Python
 
 zipCode = "96817"
 
+#loop for all zips in csv
+
 #navigate to webpage
 driver.get('https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml')
 time.sleep(1)
@@ -60,5 +62,7 @@ housingNav.click()
 housingCharacteristics = driver.find_element_by_partial_link_text('Selected Housing Characteristics')
 housingCharacteristics.click()
 time.sleep(3)
+
+#end loop for all zips in csv
 
 ##driver.quit()
