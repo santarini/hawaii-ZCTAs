@@ -1,13 +1,13 @@
 import time
 from selenium import webdriver
 
+#create webdriver
+driver = webdriver.Chrome(r"C:\Users\CommandCenter\AppData\Local\Programs\Python\Python36-32\chromedriver.exe")
+
 #open csv
 #get zip code
 
 zipCode = "96817"
-
-#create webdriver
-driver = webdriver.Chrome(r"C:\Users\CommandCenter\AppData\Local\Programs\Python\Python36-32\chromedriver.exe")
 
 #navigate to webpage
 driver.get('https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml')
