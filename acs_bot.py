@@ -59,6 +59,7 @@ time.sleep(1)
 #go to Housing Stats
 housingNav = driver.find_element_by_xpath('//*[@id="leftnav"]/a[6]')
 housingNav.click()
+time.sleep(1)
 housingCharacteristics = driver.find_element_by_partial_link_text('Selected Housing Characteristics')
 housingCharacteristics.click()
 time.sleep(3)
