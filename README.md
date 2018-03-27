@@ -6,3 +6,7 @@
 <a href="http://census.hawaii.gov/home/geography/">Parent Folder of Hawaii State Geography Data</a>
 
 <a href="https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml">ACS</a>
+
+<a href="https://www.census.gov/cgi-bin/geo/shapefiles/index.php?year=2017&layergroup=ZIP+Code+Tabulation+Areas">ACS ZCTA Areas</a>
+
+<a href="https://www.census.gov/geo/reference/gtc/gtc_area.html">ZCTA Geography Area Definitions </a>
