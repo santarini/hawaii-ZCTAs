@@ -1,5 +1,12 @@
-# hawaii-ZCTAs
+# Hawaii ZCTAs
 
+<b>ZIP Code Tabulation Areas (ZCTAs)</b> are approximate area representations of U.S. Postal Service (USPS) five-digit ZIP Code service areas that the Census Bureau creates using whole blocks to present statistical data from censuses and surveys. The Census Bureau defines ZCTAs by allocating each block that contains addresses to a single ZCTA, usually to the ZCTA that reflects the most frequently occurring ZIP Code for the addresses within that tabulation block.
+
+
+##
+
+
+## Useful/Interesting Links
 
 <a href="http://files.hawaii.gov/dbedt/op/gis/maps/2010_zcta.pdf">2010 Maps of Hawaii Zip Code Tabulation Areas</a>
 
