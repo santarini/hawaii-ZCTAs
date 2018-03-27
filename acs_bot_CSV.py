@@ -59,19 +59,140 @@ with open("hawaii_zcta.csv") as csvfile:
             nativeHawaiians = nativeHawaiians.get_attribute('innerHTML')
             print("Number of Native Hawaiians: " + nativeHawaiians)
 
-##            #go back
-##            driver.execute_script("window.history.go(-1)")
-##            time.sleep(1)
-##
-##            #go to Housing Stats
-##            housingNav = driver.find_element_by_xpath('//*[@id="leftnav"]/a[6]')
-##            housingNav.click()
-##            time.sleep(1)
-##            housingCharacteristics = driver.find_element_by_partial_link_text('Selected Housing Characteristics')
-##            housingCharacteristics.click()
-##            time.sleep(3)
+            #go back
+            driver.execute_script("window.history.go(-1)")
+            time.sleep(1)
 
-            writer.writerow({'Zip Code': zipCode, 'Land Area': landArea, 'Water Area': waterArea, 'Population': totalPopulation ,'Total Men': totalMen ,'Total Women': totalWomen,'Total Native Hawaiians': nativeHawaiians,'Median Age':medianAge })
+            #go to Housing Stats
+            housingNav = driver.find_element_by_xpath('//*[@id="leftnav"]/a[6]')
+            housingNav.click()
+            time.sleep(1)
+            housingCharacteristics = driver.find_element_by_partial_link_text('Selected Housing Characteristics')
+            housingCharacteristics.click()
+            time.sleep(3)
+
+            #total housing units
+            totalHouseholds = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[2]/td[1]')
+            totalHouseholds = totalHouseholds.get_attribute('innerHTML')
+            print("Number of Households: " + totalHouseholds)
+
+            #total vacant
+            totalVacant = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[4]/td[1]')
+            totalVacant = totalVacant.get_attribute('innerHTML')
+            print("Number of Vacant Households: " + totalVacant)
+
+            #total occupied
+            totalOccupied = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[3]/td[1]')
+            totalOccupied = totalOccupied.get_attribute('innerHTML')
+            print("Number of Occupied Households: " + totalOccupied)
+
+            #total renter occupied
+            renterOccupied = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[59]/td[1]')
+            renterOccupied = renterOccupied.get_attribute('innerHTML')
+            print("Number of Renter Occupied: " + renterOccupied)
+
+            #total owner occupied
+            ownerOccupied = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[57]/td[1]')
+            ownerOccupied = ownerOccupied.get_attribute('innerHTML')
+            print("Number of Owner Occupied: " + ownerOccupied)
+
+            #owner occupied value
+            value1 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[106]/td[1]')
+            value2 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[107]/td[1]')
+            value3 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[108]/td[1]')
+            value4 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[109]/td[1]')
+            value5 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[110]/td[1]')
+            value6 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[111]/td[1]')
+            value7 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[112]/td[1]')
+            value8 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[113]/td[1]')
+            valueMedian = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[114]/td[1]')
+            value1 = value1.get_attribute('innerHTML')
+            value2 = value2.get_attribute('innerHTML')
+            value3 = value3.get_attribute('innerHTML')
+            value4 = value4.get_attribute('innerHTML')
+            value5 = value5.get_attribute('innerHTML')
+            value6 = value6.get_attribute('innerHTML')
+            value7 = value7.get_attribute('innerHTML')
+            value8 = value8.get_attribute('innerHTML')
+            valueMedian = valueMedian.get_attribute('innerHTML')
+
+            #owner occupied with mortgage
+            withMortgage = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[118]/td[1]')
+            withMortgage = withMortgage.get_attribute('innerHTML')
+
+            #owner occupied without mortgage
+            withoutMortgage = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[119]/td[1]')
+            withoutMortgage = withoutMortgage.get_attribute('innerHTML')            
+
+            #owner occupied monthly cost with mortgage
+            monthlyCostWithMortgage1 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[123]/td[1]')
+            monthlyCostWithMortgage2 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[124]/td[1]')
+            monthlyCostWithMortgage3 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[125]/td[1]')
+            monthlyCostWithMortgage4 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[126]/td[1]')
+            monthlyCostWithMortgage5 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[127]/td[1]')
+            monthlyCostWithMortgage6 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[128]/td[1]')
+            monthlyCostWithMortgage7 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[129]/td[1]')
+            monthlyCostWithMortgageMedian = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[130]/td[1]')
+
+            monthlyCostWithMortgage1 = monthlyCostWithMortgage1.get_attribute('innerHTML')
+            monthlyCostWithMortgage2 = monthlyCostWithMortgage2.get_attribute('innerHTML')
+            monthlyCostWithMortgage3 = monthlyCostWithMortgage3.get_attribute('innerHTML')
+            monthlyCostWithMortgage4 = monthlyCostWithMortgage4.get_attribute('innerHTML')
+            monthlyCostWithMortgage5 = monthlyCostWithMortgage5.get_attribute('innerHTML')
+            monthlyCostWithMortgage6 = monthlyCostWithMortgage6.get_attribute('innerHTML')
+            monthlyCostWithMortgage7 = monthlyCostWithMortgage7.get_attribute('innerHTML')
+            monthlyCostWithMortgageMedian = monthlyCostWithMortgageMedian.get_attribute('innerHTML')
+
+            #owner occupied monthly cost without mortgage
+            monthlyCostWithoutMortgage1 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[133]/td[1]')
+            monthlyCostWithoutMortgage2 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[134]/td[1]')
+            monthlyCostWithoutMortgage3 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[135]/td[1]')
+            monthlyCostWithoutMortgage4 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[136]/td[1]')
+            monthlyCostWithoutMortgage5 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[137]/td[1]')
+            monthlyCostWithoutMortgage6 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[138]/td[1]')
+            monthlyCostWithoutMortgageMedian = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[139]/td[1]')
+
+            monthlyCostWithoutMortgage1 = monthlyCostWithoutMortgage1.get_attribute('innerHTML')
+            monthlyCostWithoutMortgage2 = monthlyCostWithoutMortgage2.get_attribute('innerHTML')
+            monthlyCostWithoutMortgage3 = monthlyCostWithoutMortgage3.get_attribute('innerHTML')
+            monthlyCostWithoutMortgage4 = monthlyCostWithoutMortgage4.get_attribute('innerHTML')
+            monthlyCostWithoutMortgage5 = monthlyCostWithoutMortgage5.get_attribute('innerHTML')
+            monthlyCostWithoutMortgage6 = monthlyCostWithoutMortgage6.get_attribute('innerHTML')
+            monthlyCostWithoutMortgageMedian = monthlyCostWithoutMortgageMedian.get_attribute('innerHTML')
+
+            #gross rent
+            grossRent1 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[164]/td[1]')
+            grossRent2 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[165]/td[1]')
+            grossRent3 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[166]/td[1]')
+            grossRent4 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[167]/td[1]')
+            grossRent5 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[168]/td[1]')
+            grossRent6 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[169]/td[1]')
+            grossRent7 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[170]/td[1]')
+            grossRentMedian = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[171]/td[1]')
+
+            grossRent1 = grossRent1.get_attribute('innerHTML')
+            grossRent2 = grossRent2.get_attribute('innerHTML')
+            grossRent3 = grossRent3.get_attribute('innerHTML')
+            grossRent4 = grossRent4.get_attribute('innerHTML')
+            grossRent5 = grossRent5.get_attribute('innerHTML')
+            grossRent6 = grossRent6.get_attribute('innerHTML')
+            grossRent7 = grossRent7.get_attribute('innerHTML')
+            grossRentMedian = grossRentMedian.get_attribute('innerHTML')
+
+            #go back
+            driver.execute_script("window.history.go(-1)")
+            time.sleep(1)
+
+            #go to population nav
+            populationNav = driver.find_element_by_xpath('//*[@id="leftnav"]/a[1]')
+            populationNav.click()
+            time.sleep(1)
+            
+
+            writer.writerow({'Zip Code': zipCode, 'Land Area': landArea, 'Water Area': waterArea, 'Population': totalPopulation ,'Total Men': totalMen ,'Total Women': totalWomen,'Total Native Hawaiians': nativeHawaiians,'Median Age':medianAge, 'Total Households': totalHouseholds, 'Total Vacant': totalVacant,'Total Occupied': totalOccupied,'Total Renter Occupied': renterOccupied,'Total Owner Occupied': ownerOccupied,'Value: Less than $50,000': value1,'Value: $50,000 to $99,999': value2,'Value: $100,000 to $149,999': value3,'Value: $150,000 to $199,999': value4,'Value: $200,000 to $299,999': value5,'Value: $300,000 to $499,999': value6,'Value: $500,000 to $999,999': value7,'Value: $1,000,000 or more': value8,'Value: Median (dollars)': valueMedian,'Total Owner Occupied with Mortgage': withMortgage,'Total Owner Occupied without Mortgage': withoutMortgage,'Monthly Cost with Mortgage:Less than $500': monthlyCostWithMortgage1,'Monthly Cost with Mortgage:$500 to $999': monthlyCostWithMortgage2,'Monthly Cost with Mortgage:$1,000 to $1,499': monthlyCostWithMortgage3,'Monthly Cost with Mortgage:$1,500 to $1,999': monthlyCostWithMortgage4,'Monthly Cost with Mortgage:$2,000 to $2,499': monthlyCostWithMortgage5,'Monthly Cost with Mortgage:$2,500 to $2,999': monthlyCostWithMortgage6,'Monthly Cost with Mortgage:$3,000 or more': monthlyCostWithMortgage7,'Monthly Cost with Mortgage:Median (dollars)': monthlyCostWithMortgageMedian,'Monthly Cost without Mortgage:Less than $250': monthlyCostWithoutMortgage1,'Monthly Cost without Mortgage:$250 to $399': monthlyCostWithoutMortgage2,'Monthly Cost without Mortgage:$400 to $599': monthlyCostWithoutMortgage3,'Monthly Cost without Mortgage:$600 to $799': monthlyCostWithoutMortgage4,'Monthly Cost without Mortgage:$800 to $999': monthlyCostWithoutMortgage5,'Monthly Cost without Mortgage:$1,000 or more': monthlyCostWithoutMortgage6,'Monthly Cost without Mortgage:Median (dollars)': monthlyCostWithoutMortgageMedian,'Gross Rent:Less than $500': grossRent1,'Gross Rent:$500 to $999': grossRent2,'Gross Rent:$1,000 to $1,499': grossRent3,'Gross Rent:$1,500 to $1,999': grossRent4,'Gross Rent:$2,000 to $2,499': grossRent5,'Gross Rent:$2,500 to $2,999': grossRent6,'Gross Rent:$3,000 or more': grossRent7,'Gross Rent:Median (dollars)': grossRentMedian,
+})
+
+
             
         #end loop for all zips in csv
 
