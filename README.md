@@ -2,9 +2,7 @@
 
 <b>ZIP Code Tabulation Areas (ZCTAs)</b> are approximate area representations of U.S. Postal Service (USPS) five-digit ZIP Code service areas that the Census Bureau creates using whole blocks to present statistical data from censuses and surveys. The Census Bureau defines ZCTAs by allocating each block that contains addresses to a single ZCTA, usually to the ZCTA that reflects the most frequently occurring ZIP Code for the addresses within that tabulation block.
 
-
-##
-
+This repo contains Python 3 programs the collect 2010 US Census Bureau data for each Hawaii ZCTA and populates that data into a single data frame.
 
 ## Useful/Interesting Links
 
