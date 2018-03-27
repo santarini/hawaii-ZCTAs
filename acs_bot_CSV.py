@@ -6,15 +6,17 @@ from selenium import webdriver
 #driver = webdriver.Chrome(r"C:\Users\CommandCenter\AppData\Local\Programs\Python\Python36-32\chromedriver.exe")
 driver = webdriver.Chrome(r"C:\Program Files\Python\Python36\chromedriver.exe")
 
-with open("Hawaii_zcta.csv") as csvfile:
+with open("hawaii_zcta.csv") as csvfile:
     reader = csv.DictReader(csvfile)
-    with open('zipData.csv', 'a') as csvfileB:
-        fieldnames = ['Zip Code', 'Population','Total Men','Total Women','Total Native Hawaiians','Median Age']
+    with open('HawaiiZipData.csv', 'a') as csvfileB:
+        fieldnames = ['Zip Code', 'Land Area', 'Water Area', 'Population','Total Men','Total Women','Total Native Hawaiians','Median Age']
         writer = csv.DictWriter(csvfileB, fieldnames=fieldnames, lineterminator = '\n')
         writer.writeheader()
 
         for row in reader:
             zipCode = (row['Zip'])
+            landArea = (row['2010 Census land area (square meters)'])
+            waterArea = (row['2010 Census water area (square meters)'])
             
             #navigate to webpage
             driver.get('https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml')
@@ -69,7 +71,7 @@ with open("Hawaii_zcta.csv") as csvfile:
 ##            housingCharacteristics.click()
 ##            time.sleep(3)
 
-            writer.writerow({'Zip Code': zipCode, 'Population': totalPopulation ,'Total Men': totalMen ,'Total Women': totalWomen,'Total Native Hawaiians': nativeHawaiians,'Median Age':medianAge })
+            writer.writerow({'Zip Code': zipCode, 'Land Area': landArea, 'Water Area': waterArea, 'Population': totalPopulation ,'Total Men': totalMen ,'Total Women': totalWomen,'Total Native Hawaiians': nativeHawaiians,'Median Age':medianAge })
             
         #end loop for all zips in csv
 
