@@ -62,7 +62,7 @@ with open("hawaii_zcta.csv") as csvfile:
 
             #go back
             driver.execute_script("window.history.go(-1)")
-            time.sleep(1)
+            time.sleep(3)
 
             #go to Housing Stats
             housingNav = driver.find_element_by_xpath('//*[@id="leftnav"]/a[6]')
@@ -93,7 +93,7 @@ with open("hawaii_zcta.csv") as csvfile:
             print("Number of Renter Occupied: " + renterOccupied)
 
             #total owner occupied
-            ownerOccupied = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[57]/td[1]')
+            ownerOccupied = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[58]/td[1]')
             ownerOccupied = ownerOccupied.get_attribute('innerHTML')
             print("Number of Owner Occupied: " + ownerOccupied)
 
