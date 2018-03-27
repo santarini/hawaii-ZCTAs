@@ -40,15 +40,24 @@ with open("hawaii_zcta.csv") as csvfile:
             totalPopulation = totalPopulation.get_attribute('innerHTML')
             print("Total Population: " + totalPopulation)
 
+            #squaremeter/person
+            sqmtrPerPerson = landArea/totalPopulation
+
             #total men
             totalMen = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[3]/td[1]')
             totalMen = totalMen.get_attribute('innerHTML')
             print("Total Men: " + totalMen)
 
+            #percentMen
+            percentMen = totalMen/totalPopulation
+
             #total women
             totalWomen = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[4]/td[1]')
             totalWomen = totalWomen.get_attribute('innerHTML')
             print("Total Women: " + totalWomen)
+
+            #percentWomen
+            percentWomen = totalWomen/totalPopulation
 
             #median age
             medianAge = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[20]/td[1]')
@@ -59,6 +68,9 @@ with open("hawaii_zcta.csv") as csvfile:
             nativeHawaiians = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[57]/td[1]')
             nativeHawaiians = nativeHawaiians.get_attribute('innerHTML')
             print("Number of Native Hawaiians: " + nativeHawaiians)
+
+            #percentHawaiian
+            percentHawaiian = nativeHawaiians/totalPopulation
 
             #go back
             driver.execute_script("window.history.go(-1)")
@@ -77,25 +89,40 @@ with open("hawaii_zcta.csv") as csvfile:
             totalHouseholds = totalHouseholds.get_attribute('innerHTML')
             print("Number of Households: " + totalHouseholds)
 
+            #squaremeter/household
+            sqmtrPerHousehold = landArea/totalHouseholds
+            
             #total vacant
             totalVacant = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[4]/td[1]')
             totalVacant = totalVacant.get_attribute('innerHTML')
             print("Number of Vacant Households: " + totalVacant)
+
+            #percent vacant
+            percentVacant = totalVacant/totalHouseholds
 
             #total occupied
             totalOccupied = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[3]/td[1]')
             totalOccupied = totalOccupied.get_attribute('innerHTML')
             print("Number of Occupied Households: " + totalOccupied)
 
+            #percent occupied
+            percentOccupied = totalOccupied/totalHouseholds
+
             #total renter occupied
             renterOccupied = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[59]/td[1]')
             renterOccupied = renterOccupied.get_attribute('innerHTML')
             print("Number of Renter Occupied: " + renterOccupied)
 
+            #percent renter occupied
+            percentRenterOccupied = renterOccupied/totalOccupied
+
             #total owner occupied
             ownerOccupied = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[58]/td[1]')
             ownerOccupied = ownerOccupied.get_attribute('innerHTML')
             print("Number of Owner Occupied: " + ownerOccupied)
+
+            #percent owner occupied
+            percentOwnerOccupied = ownerOccupied/totalOccupied
 
             #owner occupied value
             value1 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[106]/td[1]')
