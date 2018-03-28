@@ -41,7 +41,7 @@ with open("hawaii_zcta.csv") as csvfile:
             print("Total Population: " + totalPopulation)
 
             #squaremeter/person
-            sqmtrPerPerson = landArea/totalPopulation
+            sqmtrPerPerson = int(landArea)/int(totalPopulation)
 
             #total men
             totalMen = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[3]/td[1]')
@@ -49,7 +49,7 @@ with open("hawaii_zcta.csv") as csvfile:
             print("Total Men: " + totalMen)
 
             #percentMen
-            percentMen = totalMen/totalPopulation
+            percentMen = int(totalMen)/int(totalPopulation)
 
             #total women
             totalWomen = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[4]/td[1]')
@@ -57,7 +57,7 @@ with open("hawaii_zcta.csv") as csvfile:
             print("Total Women: " + totalWomen)
 
             #percentWomen
-            percentWomen = totalWomen/totalPopulation
+            percentWomen = int(totalWomen)/int(totalPopulation)
 
             #median age
             medianAge = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[20]/td[1]')
@@ -70,7 +70,7 @@ with open("hawaii_zcta.csv") as csvfile:
             print("Number of Native Hawaiians: " + nativeHawaiians)
 
             #percentHawaiian
-            percentHawaiian = nativeHawaiians/totalPopulation
+            percentHawaiian = int(nativeHawaiians)/int(totalPopulation)
 
             #go back
             driver.execute_script("window.history.go(-1)")
@@ -90,7 +90,7 @@ with open("hawaii_zcta.csv") as csvfile:
             print("Number of Households: " + totalHouseholds)
 
             #squaremeter/household
-            sqmtrPerHousehold = landArea/totalHouseholds
+            sqmtrPerHousehold = int(landArea)/int(totalHouseholds)
             
             #total vacant
             totalVacant = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[4]/td[1]')
@@ -98,7 +98,7 @@ with open("hawaii_zcta.csv") as csvfile:
             print("Number of Vacant Households: " + totalVacant)
 
             #percent vacant
-            percentVacant = totalVacant/totalHouseholds
+            percentVacant = int(totalVacant)/int(totalHouseholds)
 
             #total occupied
             totalOccupied = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[3]/td[1]')
@@ -106,7 +106,7 @@ with open("hawaii_zcta.csv") as csvfile:
             print("Number of Occupied Households: " + totalOccupied)
 
             #percent occupied
-            percentOccupied = totalOccupied/totalHouseholds
+            percentOccupied = int(totalOccupied)/int(totalHouseholds)
 
             #total renter occupied
             renterOccupied = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[59]/td[1]')
@@ -114,7 +114,7 @@ with open("hawaii_zcta.csv") as csvfile:
             print("Number of Renter Occupied: " + renterOccupied)
 
             #percent renter occupied
-            percentRenterOccupied = renterOccupied/totalOccupied
+            percentRenterOccupied = int(renterOccupied)/int(totalOccupied)
 
             #total owner occupied
             ownerOccupied = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[58]/td[1]')
@@ -122,7 +122,7 @@ with open("hawaii_zcta.csv") as csvfile:
             print("Number of Owner Occupied: " + ownerOccupied)
 
             #percent owner occupied
-            percentOwnerOccupied = ownerOccupied/totalOccupied
+            percentOwnerOccupied = int(ownerOccupied)/int(totalOccupied)
 
             #owner occupied value
             value1 = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[106]/td[1]')
