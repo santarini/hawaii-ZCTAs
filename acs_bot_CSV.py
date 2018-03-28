@@ -41,7 +41,7 @@ with open("hawaii_zcta.csv") as csvfile:
             totalPopulation = totalPopulation.replace(',','')
 
             #squaremeter/person
-            if (landArea= 0) or (totalPopulation = 0):
+            if (landArea == 0) or (int(totalPopulation) == 0):
                 sqmtrPerPerson = "N/A"
             else:
                 sqmtrPerPerson = int(landArea)/int(totalPopulation)
@@ -52,7 +52,7 @@ with open("hawaii_zcta.csv") as csvfile:
             totalMen = totalMen.replace(',','')
 
             #percentMen
-            if (totalMen= 0) or (totalPopulation = 0):
+            if (totalMen == 0) or (int(totalPopulation) == 0):
                 percentMen = "N/A"
             else:
                 percentMen = int(totalMen)/int(totalPopulation)
@@ -63,7 +63,7 @@ with open("hawaii_zcta.csv") as csvfile:
             totalWomen = totalWomen.replace(',','')
 
             #percentWomen
-            if (totalWomen= 0) or (totalPopulation = 0):
+            if (totalWomen == 0) or (int(totalPopulation) == 0):
                 percentWomen = "N/A"
             else:
                 percentWomen = int(totalWomen)/int(totalPopulation)
@@ -79,7 +79,7 @@ with open("hawaii_zcta.csv") as csvfile:
             nativeHawaiians = nativeHawaiians.replace(',','')
 
             #percentHawaiian
-            if (nativeHawaiians= 0) or (totalPopulation = 0):
+            if (nativeHawaiians == 0) or (int(totalPopulation) == 0):
                 percentHawaiian = "N/A"
             else:
                 percentHawaiian = int(nativeHawaiians)/int(totalPopulation)
@@ -102,7 +102,7 @@ with open("hawaii_zcta.csv") as csvfile:
             totalHouseholds = totalHouseholds.replace(',','')
 
             #squaremeter/household
-            if (landArea= 0) or (totalHouseholds = 0):
+            if (landArea == 0) or (int(totalHouseholds) == 0):
                 sqmtrPerHousehold = "N/A"
             else:
                 sqmtrPerHousehold = int(landArea)/int(totalHouseholds)
@@ -113,7 +113,7 @@ with open("hawaii_zcta.csv") as csvfile:
             totalVacant = totalVacant.replace(',','')
 
             #percent vacant
-            if (totalVacant= 0) or (totalHouseholds = 0):
+            if (totalVacant == 0) or (int(totalHouseholds) == 0):
                 percentVacant = "N/A"
             else:
                 percentVacant = int(totalVacant)/int(totalHouseholds)
@@ -124,7 +124,7 @@ with open("hawaii_zcta.csv") as csvfile:
             totalOccupied = totalVacant.replace(',','')
 
             #percent occupied
-            if (totalOccupied= 0) or (totalHouseholds = 0):
+            if (totalOccupied == 0) or (int(totalHouseholds) == 0):
                 percentOccupied = "N/A"
             else:
                 percentOccupied = int(totalOccupied)/int(totalHouseholds)
@@ -135,7 +135,7 @@ with open("hawaii_zcta.csv") as csvfile:
             renterOccupied = renterOccupied.replace(',','')
 
             #percent renter occupied
-            if (renterOccupied= 0) or (totalOccupied = 0):
+            if (renterOccupied == 0) or (int(totalOccupied) == 0):
                 percentRenterOccupied = "N/A"
             else:
                 percentRenterOccupied = int(renterOccupied)/int(totalOccupied)
@@ -146,7 +146,7 @@ with open("hawaii_zcta.csv") as csvfile:
             ownerOccupied = ownerOccupied.replace(',','')
 
             #percent owner occupied
-            if (ownerOccupied= 0) or (totalOccupied = 0):
+            if (ownerOccupied == 0) or (int(totalOccupied) == 0):
                 percentOwnerOccupied = "N/A"
             else:
                 percentOwnerOccupied = int(ownerOccupied)/int(totalOccupied)
