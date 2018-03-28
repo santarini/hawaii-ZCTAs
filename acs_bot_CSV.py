@@ -39,17 +39,14 @@ with open("hawaii_zcta.csv") as csvfile:
             totalPopulation = driver.find_element_by_xpath("//*[@id='data']/tbody/tr[2]/td[1]")
             totalPopulation = totalPopulation.get_attribute('innerHTML')
             totalPopulation = totalPopulation.replace(',','')
-            print("Total Population: " + totalPopulation)
 
             #squaremeter/person
             sqmtrPerPerson = int(landArea)/int(totalPopulation)
-            print(sqmtrPerPerson)
 
             #total men
             totalMen = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[3]/td[1]')
             totalMen = totalMen.get_attribute('innerHTML')
             totalMen = totalMen.replace(',','')
-            print("Total Men: " + totalMen)
 
             #percentMen
             percentMen = int(totalMen)/int(totalPopulation)
@@ -58,7 +55,6 @@ with open("hawaii_zcta.csv") as csvfile:
             totalWomen = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[4]/td[1]')
             totalWomen = totalWomen.get_attribute('innerHTML')
             totalWomen = totalWomen.replace(',','')
-            print("Total Women: " + totalWomen)
 
             #percentWomen
             percentWomen = int(totalWomen)/int(totalPopulation)
@@ -67,13 +63,11 @@ with open("hawaii_zcta.csv") as csvfile:
             medianAge = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[20]/td[1]')
             medianAge = medianAge.get_attribute('innerHTML')
             medianAge = medianAge.replace(',','')
-            print("Median Age: " + medianAge)
 
             #native hawaiians
             nativeHawaiians = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[57]/td[1]')
             nativeHawaiians = nativeHawaiians.get_attribute('innerHTML')
             nativeHawaiians = nativeHawaiians.replace(',','')
-            print("Number of Native Hawaiians: " + nativeHawaiians)
 
             #percentHawaiian
             percentHawaiian = int(nativeHawaiians)/int(totalPopulation)
@@ -94,7 +88,6 @@ with open("hawaii_zcta.csv") as csvfile:
             totalHouseholds = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[2]/td[1]')
             totalHouseholds = totalHouseholds.get_attribute('innerHTML')
             totalHouseholds = totalHouseholds.replace(',','')
-            print("Number of Households: " + totalHouseholds)
 
             #squaremeter/household
             sqmtrPerHousehold = int(landArea)/int(totalHouseholds)
@@ -103,7 +96,6 @@ with open("hawaii_zcta.csv") as csvfile:
             totalVacant = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[4]/td[1]')
             totalVacant = totalVacant.get_attribute('innerHTML')
             totalVacant = totalVacant.replace(',','')
-            print("Number of Vacant Households: " + totalVacant)
 
             #percent vacant
             percentVacant = int(totalVacant)/int(totalHouseholds)
@@ -112,7 +104,6 @@ with open("hawaii_zcta.csv") as csvfile:
             totalOccupied = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[3]/td[1]')
             totalOccupied = totalOccupied.get_attribute('innerHTML')
             totalOccupied = totalVacant.replace(',','')
-            print("Number of Occupied Households: " + totalOccupied)
 
             #percent occupied
             percentOccupied = int(totalOccupied)/int(totalHouseholds)
@@ -121,7 +112,6 @@ with open("hawaii_zcta.csv") as csvfile:
             renterOccupied = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[59]/td[1]')
             renterOccupied = renterOccupied.get_attribute('innerHTML')
             renterOccupied = renterOccupied.replace(',','')
-            print("Number of Renter Occupied: " + renterOccupied)
 
             #percent renter occupied
             percentRenterOccupied = int(renterOccupied)/int(totalOccupied)
@@ -130,7 +120,6 @@ with open("hawaii_zcta.csv") as csvfile:
             ownerOccupied = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[58]/td[1]')
             ownerOccupied = ownerOccupied.get_attribute('innerHTML')
             ownerOccupied = ownerOccupied.replace(',','')
-            print("Number of Owner Occupied: " + ownerOccupied)
 
             #percent owner occupied
             percentOwnerOccupied = int(ownerOccupied)/int(totalOccupied)
@@ -230,7 +219,7 @@ with open("hawaii_zcta.csv") as csvfile:
 
             writer.writerow({'Zip Code': zipCode, 'Land Area': landArea, 'Water Area': waterArea, 'Population': totalPopulation,'Square Meter per Person': sqmtrPerPerson ,'Total Men': totalMen,'Percent Men':percentMen ,'Total Women': totalWomen,'Percent Women':percentWomen,'Total Native Hawaiians': nativeHawaiians,'Percent Native Hawaiian': percentHawaiian,'Median Age':medianAge, 'Total Households': totalHouseholds,'Square Meter per Household': sqmtrPerHousehold, 'Total Vacant': totalVacant,'Vacancy Rate':percentVacant,'Total Occupied': totalOccupied,'Occupancy Rate':percentOccupied,'Total Renter Occupied': renterOccupied,'Renter Occupancy Rate':percentRenterOccupied,'Total Owner Occupied': ownerOccupied,'Owner Occupancy Rate': percentOwnerOccupied,'Value: Less than $50,000': value1,'Value: $50,000 to $99,999': value2,'Value: $100,000 to $149,999': value3,'Value: $150,000 to $199,999': value4,'Value: $200,000 to $299,999': value5,'Value: $300,000 to $499,999': value6,'Value: $500,000 to $999,999': value7,'Value: $1,000,000 or more': value8,'Value: Median (dollars)': valueMedian,'Total Owner Occupied with Mortgage': withMortgage,'Total Owner Occupied without Mortgage': withoutMortgage,'Monthly Cost with Mortgage:Less than $500': monthlyCostWithMortgage1,'Monthly Cost with Mortgage:$500 to $999': monthlyCostWithMortgage2,'Monthly Cost with Mortgage:$1,000 to $1,499': monthlyCostWithMortgage3,'Monthly Cost with Mortgage:$1,500 to $1,999': monthlyCostWithMortgage4,'Monthly Cost with Mortgage:$2,000 to $2,499': monthlyCostWithMortgage5,'Monthly Cost with Mortgage:$2,500 to $2,999': monthlyCostWithMortgage6,'Monthly Cost with Mortgage:$3,000 or more': monthlyCostWithMortgage7,'Monthly Cost with Mortgage:Median (dollars)': monthlyCostWithMortgageMedian,'Monthly Cost without Mortgage:Less than $250': monthlyCostWithoutMortgage1,'Monthly Cost without Mortgage:$250 to $399': monthlyCostWithoutMortgage2,'Monthly Cost without Mortgage:$400 to $599': monthlyCostWithoutMortgage3,'Monthly Cost without Mortgage:$600 to $799': monthlyCostWithoutMortgage4,'Monthly Cost without Mortgage:$800 to $999': monthlyCostWithoutMortgage5,'Monthly Cost without Mortgage:$1,000 or more': monthlyCostWithoutMortgage6,'Monthly Cost without Mortgage:Median (dollars)': monthlyCostWithoutMortgageMedian,'Gross Rent:Less than $500': grossRent1,'Gross Rent:$500 to $999': grossRent2,'Gross Rent:$1,000 to $1,499': grossRent3,'Gross Rent:$1,500 to $1,999': grossRent4,'Gross Rent:$2,000 to $2,499': grossRent5,'Gross Rent:$2,500 to $2,999': grossRent6,'Gross Rent:$3,000 or more': grossRent7,'Gross Rent:Median (dollars)': grossRentMedian,
 })
-
+            print("Finished " + zipCode)
             
         #end loop for all zips in csv
 
