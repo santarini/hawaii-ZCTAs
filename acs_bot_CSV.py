@@ -38,14 +38,17 @@ with open("hawaii_zcta.csv") as csvfile:
             #total population
             totalPopulation = driver.find_element_by_xpath("//*[@id='data']/tbody/tr[2]/td[1]")
             totalPopulation = totalPopulation.get_attribute('innerHTML')
+            totalPopulation = totalPopulation.replace(',','')
             print("Total Population: " + totalPopulation)
 
             #squaremeter/person
             sqmtrPerPerson = int(landArea)/int(totalPopulation)
+            print(sqmtrPerPerson)
 
             #total men
             totalMen = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[3]/td[1]')
             totalMen = totalMen.get_attribute('innerHTML')
+            totalMen = totalMen.replace(',','')
             print("Total Men: " + totalMen)
 
             #percentMen
@@ -54,6 +57,7 @@ with open("hawaii_zcta.csv") as csvfile:
             #total women
             totalWomen = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[4]/td[1]')
             totalWomen = totalWomen.get_attribute('innerHTML')
+            totalWomen = totalWomen.replace(',','')
             print("Total Women: " + totalWomen)
 
             #percentWomen
@@ -62,11 +66,13 @@ with open("hawaii_zcta.csv") as csvfile:
             #median age
             medianAge = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[20]/td[1]')
             medianAge = medianAge.get_attribute('innerHTML')
+            medianAge = medianAge.replace(',','')
             print("Median Age: " + medianAge)
 
             #native hawaiians
             nativeHawaiians = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[57]/td[1]')
             nativeHawaiians = nativeHawaiians.get_attribute('innerHTML')
+            nativeHawaiians = nativeHawaiians.replace(',','')
             print("Number of Native Hawaiians: " + nativeHawaiians)
 
             #percentHawaiian
@@ -87,6 +93,7 @@ with open("hawaii_zcta.csv") as csvfile:
             #total housing units
             totalHouseholds = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[2]/td[1]')
             totalHouseholds = totalHouseholds.get_attribute('innerHTML')
+            totalHouseholds = totalHouseholds.replace(',','')
             print("Number of Households: " + totalHouseholds)
 
             #squaremeter/household
@@ -95,6 +102,7 @@ with open("hawaii_zcta.csv") as csvfile:
             #total vacant
             totalVacant = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[4]/td[1]')
             totalVacant = totalVacant.get_attribute('innerHTML')
+            totalVacant = totalVacant.replace(',','')
             print("Number of Vacant Households: " + totalVacant)
 
             #percent vacant
@@ -103,6 +111,7 @@ with open("hawaii_zcta.csv") as csvfile:
             #total occupied
             totalOccupied = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[3]/td[1]')
             totalOccupied = totalOccupied.get_attribute('innerHTML')
+            totalOccupied = totalVacant.replace(',','')
             print("Number of Occupied Households: " + totalOccupied)
 
             #percent occupied
@@ -111,6 +120,7 @@ with open("hawaii_zcta.csv") as csvfile:
             #total renter occupied
             renterOccupied = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[59]/td[1]')
             renterOccupied = renterOccupied.get_attribute('innerHTML')
+            renterOccupied = renterOccupied.replace(',','')
             print("Number of Renter Occupied: " + renterOccupied)
 
             #percent renter occupied
@@ -119,6 +129,7 @@ with open("hawaii_zcta.csv") as csvfile:
             #total owner occupied
             ownerOccupied = driver.find_element_by_xpath('//*[@id="data"]/tbody/tr[58]/td[1]')
             ownerOccupied = ownerOccupied.get_attribute('innerHTML')
+            ownerOccupied = ownerOccupied.replace(',','')
             print("Number of Owner Occupied: " + ownerOccupied)
 
             #percent owner occupied
