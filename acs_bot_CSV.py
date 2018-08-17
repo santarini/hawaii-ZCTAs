@@ -3,8 +3,8 @@ import csv
 from selenium import webdriver
 
 #create webdriver
-#driver = webdriver.Chrome(r"C:\Users\CommandCenter\AppData\Local\Programs\Python\Python36-32\chromedriver.exe")
-driver = webdriver.Chrome(r"C:\Program Files\Python\Python36\chromedriver.exe")
+driver = webdriver.Chrome(r"C:\Users\CommandCenter\AppData\Local\Programs\Python\Python36-32\chromedriver.exe")
+#driver = webdriver.Chrome(r"C:\Program Files\Python\Python36\chromedriver.exe")
 
 with open("hawaii_zcta.csv") as csvfile:
     reader = csv.DictReader(csvfile)
